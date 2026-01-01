@@ -10,9 +10,9 @@ async def root(): # A async functions defines the path operation
 def health_check():
     return {"status": "healthy"}
 
-@app.post("/pedict")
-def predict_calori(data: DataInput):
-    input_data = pd.dataframe([data.model_dump()])
-    prediction = model.predict(input_data)[0]
-    return {"Your calori Burn": round(float(prediction),2)}
+# @app.post("/pedict")
+# def predict_calori(data: DataInput):
+#     input_data = pd.dataframe([data.model_dump()])
+#     prediction = model.predict(input_data)[0]
+#     return {"Your calori Burn": round(float(prediction),2)}
 
