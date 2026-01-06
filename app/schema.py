@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 
 class ModelInput(BaseModel):
+    id : int
     Sex : str
     Age : int
     Height : float
