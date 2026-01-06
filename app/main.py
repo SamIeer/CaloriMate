@@ -18,7 +18,7 @@ def health_check():
 @app.post("/pedict")
 def predict_calori(data: ModelInput):
     # Convert request into dataframe
-    input_data = pd.dataframe([data.model_dump()])
+    input_data = pd.DataFrame([data.model_dump()])
     # Predict
     prediction = model.predict(input_data)[0]
     return {"Your calori Burn": round(float(prediction),2)}
