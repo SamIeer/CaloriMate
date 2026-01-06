@@ -5,7 +5,7 @@ import joblib
 
 app = FastAPI()   # initialise a fastapi app 
 
-model = joblib.load("../Model/calorie_model.joblib")
+model = joblib.load("Model/calorie_model.pkl")
 
 @app.get("/")     # creating a path operations (GET, POST)
 async def root(): # A async functions defines the path operation
@@ -17,7 +17,9 @@ def health_check():
 
 @app.post("/pedict")
 def predict_calori(data: ModelInput):
+    # Convert request into dataframe
     input_data = pd.dataframe([data.model_dump()])
+    # Predict
     prediction = model.predict(input_data)[0]
     return {"Your calori Burn": round(float(prediction),2)}
 
