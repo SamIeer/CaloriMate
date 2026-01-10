@@ -11,5 +11,5 @@ class ModelInput(BaseModel):
     Body_Temp : float
 
 '''
-This insures clean input, validate data - no missing or invalid field when API get hit
+This insures clean input, validate data - no missing or invalid field when API get hitt
 '''
