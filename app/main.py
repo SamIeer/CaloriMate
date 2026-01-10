@@ -11,8 +11,8 @@ model = joblib.load("Model/calorie_model.pkl")
 async def root(): # A async functions defines the path operation
     return {"message": "Wellcome to  CaloriMate API - Predict your calori "} # returning the content
 
-@app.get("/health")
-def health_check():
+@app.get("/health") # EndPoint for health
+def health_check(): 
     return {"status": "healthy"}
 
 @app.post("/pedict")
