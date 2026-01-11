@@ -17,6 +17,7 @@ st.write("Predict how many calories you burn during exercise")
 # Input Form
 # -------------------------------
 with st.form("calorie_form"):
+    # I need ID here 
     sex = st.selectbox("Sex", ["male", "female"])
     age = st.number_input("Age", min_value=10, max_value=100, value=30)
     height = st.number_input("Height (cm)", min_value=120, max_value=220, value=170)
