@@ -15,7 +15,7 @@ async def root(): # A async functions defines the path operation
 def health_check(): 
     return {"status": "healthy"}
 
-@app.post("/pedict")
+@app.post("/pedict") #Endpoint for predict 
 def predict_calori(data: ModelInput):
     # Convert request into dataframe
     input_data = pd.DataFrame([data.model_dump()])

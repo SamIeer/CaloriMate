@@ -56,6 +56,6 @@ print("MSE:",mse)
 print("R2 Score:", r2)
 
 # Save Model
-
+# In model folder
 joblib.dump(model, "CaloriMate/Model/calorie_model.pkl")
 print("Model saved.")
