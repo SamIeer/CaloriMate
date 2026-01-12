@@ -24,3 +24,5 @@ def predict_calori(data: ModelInput):
     return {"Your calori Burn": round(float(prediction),2)}
 
 # This is a working app 
+# Don't slack off bro 
+
