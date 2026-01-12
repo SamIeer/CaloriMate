@@ -1,0 +1,8 @@
+name: CALORIMATE
+
+on:
+  push:
+    bracnches: [ "main" ]
+  pull_request:
+    bracnches: [ "main" ]
+    
