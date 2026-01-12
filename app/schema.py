@@ -13,3 +13,4 @@ class ModelInput(BaseModel):
 '''
 This insures clean input, validate data - no missing or invalid field when API get hitt
 '''
+#Building a schema read more write more
