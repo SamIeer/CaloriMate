@@ -33,28 +33,31 @@ with st.form("calorie_form"):
 # -------------------------------
 if submitted:
     payload = {
-        "id": 1,
-        "Sex": sex,
-        "Age": age,
-        "Height": height,
-        "Weight": weight,
-        "Duration": duration,
-        "Heart_Rate": heart_rate,
-        "Body_Temp": body_temp
+        "sex": sex,
+        "age": age,
+        "height": height,
+        "weight": weight,
+        "duration": duration,
+        "heart_rate": heart_rate,
+        "body_temp": body_temp
     }
 
     try:
-        response = requests.post("http://127.0.0.1:8000/predict", json=payload)
+        response = requests.post(
+            "http://127.0.0.1:8000/predict",
+            json=payload,
+            timeout=5
+        )
+
+        st.write("Status:", response.status_code)
+        st.write("Raw response:", response.text)
 
         if response.status_code == 200:
             result = response.json()
-            calories = result["Calories Burned"]
-
+            calories = result["calories_burned"]
             st.success(f"🔥 Estimated Calories Burned: {calories}")
-
         else:
-            st.error("API Error: " + response.text)
+            st.error(response.text)
 
     except Exception as e:
-        st.error("Could not connect to FastAPI server")
-
+        st.error(f"Connection error: {e}")
