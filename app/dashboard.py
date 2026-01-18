@@ -10,7 +10,7 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("🔥 CaloriMate")
+st.title("CaloriMate")
 st.write("Predict how many calories you burn during exercise")
 
 # -------------------------------
