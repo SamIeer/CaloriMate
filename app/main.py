@@ -26,3 +26,4 @@ def predict_calori(data: ModelInput):
 # This is a working app 
 # Don't slack off bro 
 # Last ONE 
+# All done 
